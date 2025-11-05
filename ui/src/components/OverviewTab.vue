@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { meilisearchConsoleApiClient } from '@/api'
+import { OpensearchConsoleApiClient } from '@/api'
 import { VButton, VEmpty, VLoading, VSpace, VStatusDot } from '@halo-dev/components'
 import { useQuery } from '@tanstack/vue-query'
 import { AxiosError } from 'axios'
@@ -21,9 +21,9 @@ const {
   error,
   refetch,
 } = useQuery({
-  queryKey: ['plugin:meilisearch:stats'],
+  queryKey: ['plugin:Opensearch:stats'],
   queryFn: async () => {
-    const { data } = await meilisearchConsoleApiClient.index.getMeilisearchStats({
+    const { data } = await OpensearchConsoleApiClient.index.getOpensearchStats({
       mute: true,
     })
     return data
@@ -75,7 +75,7 @@ const fieldDistributionItems = computed(() => {
 
     <VEmpty v-else-if="error" title="加载失败">
       <template #message>
-        数据加载失败，请检查 Meilisearch 服务配置，错误信息：{{ errorMessage }}
+        数据加载失败，请检查 Opensearch 服务配置，错误信息：{{ errorMessage }}
       </template>
       <template #actions>
         <VSpace>
@@ -85,7 +85,7 @@ const fieldDistributionItems = computed(() => {
               $router.push({
                 name: 'PluginDetail',
                 params: {
-                  name: 'meilisearch',
+                  name: 'Opensearch',
                 },
                 query: {
                   tab: 'basic',

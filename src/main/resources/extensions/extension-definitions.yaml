@@ -1,10 +1,10 @@
 apiVersion: plugin.halo.run/v1alpha1
 kind: ExtensionDefinition
 metadata:
-  name: search-engine-meilisearch-x
+  name: search-engine-Opensearch-x
 spec:
-  className: run.halo.meilisearch.MeilisearchSearchEngine
+  className: run.halo.opensearch.OpensearchSearchEngine
   extensionPointName: search-engine
-  displayName: "Meilisearch"
-  description: "Meilisearch is a fast and hyper relevant search engine that provides instant search experiences."
-  icon: "/plugins/meilisearch/assets/logo.svg"
+  displayName: "Opensearch"
+  description: "Opensearch is a fast and hyper relevant search engine that provides instant search experiences."
+  icon: "/plugins/opensearch/assets/logo.svg"

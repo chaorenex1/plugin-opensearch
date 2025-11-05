@@ -1,24 +1,35 @@
 apiVersion: v1alpha1
 kind: Setting
 metadata:
-  name: meilisearch-engine-setting
+  name: Opensearch-engine-setting
 spec:
   forms:
     - group: basic
       label: 基本设置
       formSchema:
-        - $formkit: url
+        - $formkit: text
           name: host
           required: true
-          label: "Meilisearch 服务地址"
-          placeholder: "http://localhost:7700"
+          label: "Opensearch 服务地址"
+          placeholder: "localhost"
           help: "需要确保 Halo 服务或者 Halo 所在的容器可以访问到此地址"
-          validation: "required|url"
+          validation: "required"
+        - $formkit: number
+          name: port
+          required: true
+          label: "Opensearch 服务端口"
+          placeholder: 9200
+          help: "Opensearch 服务监听的端口，默认是 9200"
+          validation: "required"
+        - $formkit: text
+          name: username
+          label: "Opensearch 用户名"
+          help: "用于连接 Opensearch 服务的用户名"
+          validation: "required"
         - $formkit: password
           name: masterKey
-          required: true
-          label: "Meilisearch 主密钥"
-          help: "Meilisearch 的 Master Key"
+          label: "Opensearch 用户密码"
+          help: "Opensearch 用户密码"
           validation: "required"
         - $formkit: text
           name: indexName

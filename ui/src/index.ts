@@ -2,24 +2,24 @@ import { VLoading } from '@halo-dev/components'
 import { definePlugin } from '@halo-dev/console-shared'
 import 'uno.css'
 import { defineAsyncComponent, markRaw } from 'vue'
-import SimpleIconsMeilisearch from '~icons/simple-icons/meilisearch?color=#FF5CAA'
+import SimpleIconsOpensearch from '~icons/simple-icons/Opensearch?color=#FF5CAA'
 
 export default definePlugin({
   routes: [
     {
       parentName: 'ToolsRoot',
       route: {
-        path: 'meilisearch-overview',
-        name: 'MeilisearchOverview',
-        redirect: '/plugins/meilisearch?tab=overview',
+        path: 'Opensearch-overview',
+        name: 'OpensearchOverview',
+        redirect: '/plugins/Opensearch?tab=overview',
         meta: {
-          title: 'Meilisearch 数据概览',
-          description: '查看 Meilisearch 搜索引擎的索引数据',
+          title: 'Opensearch 数据概览',
+          description: '查看 Opensearch 搜索引擎的索引数据',
           searchable: true,
           permissions: ['*'],
           menu: {
-            name: 'Meilisearch 数据概览',
-            icon: markRaw(SimpleIconsMeilisearch),
+            name: 'Opensearch 数据概览',
+            icon: markRaw(SimpleIconsOpensearch),
             priority: 0,
           },
         },

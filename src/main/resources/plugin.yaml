@@ -1,21 +1,21 @@
 apiVersion: plugin.halo.run/v1alpha1
 kind: Plugin
 metadata:
-  name: meilisearch
+  name: Opensearch
 spec:
   enabled: true
   requires: ">=2.21.0"
   author:
-    name: Halo
-    website: https://github.com/halo-dev
+    name: chaorenex1
+    website: https://github.com/chaorenex1
   logo: logo.svg
-  homepage: https://github.com/halo-sigs/plugin-meilisearch#readme
-  repo: https://github.com/halo-sigs/plugin-meilisearch
-  issues: https://github.com/halo-sigs/plugin-meilisearch/issues
-  displayName: "Meilisearch 搜索引擎"
-  description: "支持集成 Meilisearch 搜索引擎，提供更快，体验更好的搜索功能。"
-  configMapName: meilisearch-engine-config
-  settingName: meilisearch-engine-setting
+  homepage: https://github.com/chaorenex1/plugin-opensearch#readme
+  repo: https://github.com/chaorenex1/plugin-opensearch
+  issues: https://github.com/chaorenex1/plugin-opensearch/issues
+  displayName: "Opensearch 搜索引擎"
+  description: "支持集成 Opensearch 搜索引擎，提供更快，体验更好的搜索功能。"
+  configMapName: Opensearch-engine-config
+  settingName: Opensearch-engine-setting
   license:
     - name: "GPL-3.0"
-      url: "https://github.com/halo-sigs/plugin-meilisearch/blob/main/LICENSE"
+      url: "https://github.com/chaorenex1/plugin-Opensearch/blob/main/LICENSE"

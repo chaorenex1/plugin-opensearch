@@ -12,4 +12,4 @@
  * Do not edit the class manually.
  */
 
-export * from './api/meilisearch-console-v1alpha1-api'
+export * from './api/opensearch-console-v1alpha1-api'

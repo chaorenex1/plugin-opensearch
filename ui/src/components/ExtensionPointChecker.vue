@@ -6,14 +6,14 @@ import { computed, ref } from 'vue'
 
 const EXTENSION_POINT_ENABLED_GROUP = 'extensionPointEnabled'
 const EXTENSION_POINT_NAME = 'search-engine'
-const MEILISEARCH_EXTENSION_DEFINITION_NAME = 'search-engine-meilisearch-x'
+const Opensearch_EXTENSION_DEFINITION_NAME = 'search-engine-Opensearch-x'
 
 const {
   data: value,
   isLoading,
   refetch,
 } = useQuery({
-  queryKey: ['plugin:meilisearch:extension-point', EXTENSION_POINT_NAME],
+  queryKey: ['plugin:Opensearch:extension-point', EXTENSION_POINT_NAME],
   queryFn: async () => {
     const { data: extensionPointEnabled } =
       await consoleApiClient.configMap.system.getSystemConfigByGroup({
@@ -32,13 +32,13 @@ const {
   },
 })
 
-const isMeilisearchEnabled = computed(() => {
-  return value.value === MEILISEARCH_EXTENSION_DEFINITION_NAME
+const isOpensearchEnabled = computed(() => {
+  return value.value === Opensearch_EXTENSION_DEFINITION_NAME
 })
 
 const switching = ref(false)
 
-async function handleEnableMeilisearch() {
+async function handleEnableOpensearch() {
   switching.value = true
 
   try {
@@ -51,7 +51,7 @@ async function handleEnableMeilisearch() {
       group: EXTENSION_POINT_ENABLED_GROUP,
       body: {
         ...extensionPointEnabled,
-        [EXTENSION_POINT_NAME]: [MEILISEARCH_EXTENSION_DEFINITION_NAME],
+        [EXTENSION_POINT_NAME]: [Opensearch_EXTENSION_DEFINITION_NAME],
       },
     })
 
@@ -68,13 +68,13 @@ async function handleEnableMeilisearch() {
 <template>
   <div class=":uno: w-full sm:w-96">
     <VAlert
-      v-if="!isMeilisearchEnabled && !isLoading"
+      v-if="!isOpensearchEnabled && !isLoading"
       title="提示"
-      description="检测到当前已启用的搜索引擎不是 Meilisearch"
+      description="检测到当前已启用的搜索引擎不是 Opensearch"
     >
       <template #actions>
-        <VButton @click="handleEnableMeilisearch" size="sm" :loading="switching">
-          切换为 Meilisearch
+        <VButton @click="handleEnableOpensearch" size="sm" :loading="switching">
+          切换为 Opensearch
         </VButton>
       </template>
     </VAlert>

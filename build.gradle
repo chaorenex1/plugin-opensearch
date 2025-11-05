@@ -4,7 +4,7 @@ plugins {
     id "run.halo.plugin.devtools" version "0.6.1"
 }
 
-group 'run.halo.meilisearch'
+group 'run.halo.Opensearch'
 
 repositories {
     mavenCentral()
@@ -17,6 +17,7 @@ dependencies {
     implementation('com.meilisearch.sdk:meilisearch-java:0.15.0') {
         exclude group: 'com.fasterxml.jackson.core', module: 'jackson-databind'
     }
+    implementation 'org.opensearch.client:opensearch-rest-high-level-client:3.3.2'
 
     testImplementation 'run.halo.app:api'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -57,9 +58,9 @@ haloPlugin {
     openApi {
         groupingRules {
             extensionApis {
-                displayName = 'Extension API for Meilisearch Plugin'
+                displayName = 'Extension API for Opensearch Plugin'
                 pathsToMatch = [
-                    '/apis/console.api.meilisearch.halo.run/v1alpha1/*',
+                    '/apis/console.api.opensearch.halo.run/v1alpha1/*',
                 ]
             }
         }

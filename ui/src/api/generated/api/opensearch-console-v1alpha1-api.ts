@@ -30,20 +30,20 @@ import { BASE_PATH, BaseAPI, RequiredError, operationServerMap, type RequestArgs
 // @ts-ignore
 import type { IndexStats } from '../models'
 /**
- * MeilisearchConsoleV1alpha1Api - axios parameter creator
+ * OpensearchConsoleV1alpha1Api - axios parameter creator
  * @export
  */
-export const MeilisearchConsoleV1alpha1ApiAxiosParamCreator = function (
+export const OpensearchConsoleV1alpha1ApiAxiosParamCreator = function (
   configuration?: Configuration,
 ) {
   return {
     /**
-     * Get Meilisearch index statistics
+     * Get Opensearch index statistics
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getMeilisearchStats: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-      const localVarPath = `/apis/console.api.meilisearch.halo.run/v1alpha1/stats`
+    getOpensearchStats: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+      const localVarPath = `/apis/console.api.opensearch.halo.run/v1alpha1/stats`
       // use dummy base URL string because the URL constructor only accepts absolute URLs.
       const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL)
       let baseOptions
@@ -80,24 +80,24 @@ export const MeilisearchConsoleV1alpha1ApiAxiosParamCreator = function (
 }
 
 /**
- * MeilisearchConsoleV1alpha1Api - functional programming interface
+ * OpensearchConsoleV1alpha1Api - functional programming interface
  * @export
  */
-export const MeilisearchConsoleV1alpha1ApiFp = function (configuration?: Configuration) {
-  const localVarAxiosParamCreator = MeilisearchConsoleV1alpha1ApiAxiosParamCreator(configuration)
+export const OpensearchConsoleV1alpha1ApiFp = function (configuration?: Configuration) {
+  const localVarAxiosParamCreator = OpensearchConsoleV1alpha1ApiAxiosParamCreator(configuration)
   return {
     /**
-     * Get Meilisearch index statistics
+     * Get Opensearch index statistics
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    async getMeilisearchStats(
+    async getOpensearchStats(
       options?: RawAxiosRequestConfig,
     ): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IndexStats>> {
-      const localVarAxiosArgs = await localVarAxiosParamCreator.getMeilisearchStats(options)
+      const localVarAxiosArgs = await localVarAxiosParamCreator.getOpensearchStats(options)
       const localVarOperationServerIndex = configuration?.serverIndex ?? 0
       const localVarOperationServerBasePath =
-        operationServerMap['MeilisearchConsoleV1alpha1Api.getMeilisearchStats']?.[
+        operationServerMap['OpensearchConsoleV1alpha1Api.getOpensearchStats']?.[
           localVarOperationServerIndex
         ]?.url
       return (axios, basePath) =>
@@ -112,43 +112,43 @@ export const MeilisearchConsoleV1alpha1ApiFp = function (configuration?: Configu
 }
 
 /**
- * MeilisearchConsoleV1alpha1Api - factory interface
+ * OpensearchConsoleV1alpha1Api - factory interface
  * @export
  */
-export const MeilisearchConsoleV1alpha1ApiFactory = function (
+export const OpensearchConsoleV1alpha1ApiFactory = function (
   configuration?: Configuration,
   basePath?: string,
   axios?: AxiosInstance,
 ) {
-  const localVarFp = MeilisearchConsoleV1alpha1ApiFp(configuration)
+  const localVarFp = OpensearchConsoleV1alpha1ApiFp(configuration)
   return {
     /**
-     * Get Meilisearch index statistics
+     * Get Opensearch index statistics
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getMeilisearchStats(options?: RawAxiosRequestConfig): AxiosPromise<IndexStats> {
-      return localVarFp.getMeilisearchStats(options).then((request) => request(axios, basePath))
+    getOpensearchStats(options?: RawAxiosRequestConfig): AxiosPromise<IndexStats> {
+      return localVarFp.getOpensearchStats(options).then((request) => request(axios, basePath))
     },
   }
 }
 
 /**
- * MeilisearchConsoleV1alpha1Api - object-oriented interface
+ * OpensearchConsoleV1alpha1Api - object-oriented interface
  * @export
- * @class MeilisearchConsoleV1alpha1Api
+ * @class OpensearchConsoleV1alpha1Api
  * @extends {BaseAPI}
  */
-export class MeilisearchConsoleV1alpha1Api extends BaseAPI {
+export class OpensearchConsoleV1alpha1Api extends BaseAPI {
   /**
-   * Get Meilisearch index statistics
+   * Get Opensearch index statistics
    * @param {*} [options] Override http request option.
    * @throws {RequiredError}
-   * @memberof MeilisearchConsoleV1alpha1Api
+   * @memberof OpensearchConsoleV1alpha1Api
    */
-  public getMeilisearchStats(options?: RawAxiosRequestConfig) {
-    return MeilisearchConsoleV1alpha1ApiFp(this.configuration)
-      .getMeilisearchStats(options)
+  public getOpensearchStats(options?: RawAxiosRequestConfig) {
+    return OpensearchConsoleV1alpha1ApiFp(this.configuration)
+      .getOpensearchStats(options)
       .then((request) => request(this.axios, this.basePath))
   }
 }

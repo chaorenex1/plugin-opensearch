@@ -14,7 +14,7 @@ async function handleRebuildIndex() {
     onConfirm: async () => {
       await consoleApiClient.content.indices.rebuildAllIndices()
       await queryClient.invalidateQueries({
-        queryKey: ['plugin:meilisearch:stats'],
+        queryKey: ['plugin:Opensearch:stats'],
       })
       Toast.success('已请求重建索引')
     },
