@@ -6,15 +6,16 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import run.halo.app.plugin.PluginContext;
+import run.halo.opensearch.OpensearchPlugin;
 
 @ExtendWith(MockitoExtension.class)
-class MeilisearchPluginTest {
+class OpensearchPluginTest {
 
     @Mock
     PluginContext context;
 
     @InjectMocks
-    MeilisearchPlugin plugin;
+    OpensearchPlugin plugin;
 
     @Test
     void contextLoads() {

@@ -14,10 +14,12 @@ dependencies {
     implementation platform('run.halo.tools.platform:plugin:2.21.0')
     compileOnly 'run.halo.app:api'
 
-    implementation('com.meilisearch.sdk:meilisearch-java:0.15.0') {
+//    implementation('com.meilisearch.sdk:meilisearch-java:0.15.0') {
+//        exclude group: 'com.fasterxml.jackson.core', module: 'jackson-databind'
+//    }
+    implementation('org.opensearch.client:opensearch-rest-high-level-client:3.3.2'){
         exclude group: 'com.fasterxml.jackson.core', module: 'jackson-databind'
     }
-    implementation 'org.opensearch.client:opensearch-rest-high-level-client:3.3.2'
 
     testImplementation 'run.halo.app:api'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
